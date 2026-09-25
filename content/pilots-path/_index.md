@@ -9,7 +9,7 @@ Think of this poster as your map. You don't need to decide to become a pilot —
 
 - **Discovery flight** (~30–45 min with a CFI at a local field like KCEF / KBAF — placeholder). You handle the controls in cruise.
 - **Chair-flying:** sit, touch-poster, say checklists out loud. Sounds silly, works brilliantly.
-- **Sim first:** do Mission 1 in [Sim Station](/sim-station/) before you pay for Hobbs time.
+- **Sim first:** do Mission 1 in [Flight Sim](/sim-station/) before you pay for Hobbs time.
 
 ### 2. Private Pilot License (PPL) in plain English
 

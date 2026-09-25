@@ -21,7 +21,7 @@ menu:
     - name: "Guides"
       url: "/guides/"
       weight: 3
-    - name: "Sim Station"
+    - name: "Flight Sim"
       url: "/sim-station/"
       weight: 4
     - name: "Club Updates"

@@ -1,7 +1,7 @@
-# Placeholder stock photos — swap with real club shots anytime.
+# Reference images used by the site. Replace illustrative or stock imagery with real club photos when available.
 # Files live in assets/img/. Keep attribution here + short caption in footer.
-- file: "hero-ramp.jpg"
-  credit: "Cessna 172 taking off at Catalina Island Airport (KAVX), P. Alejandro Díaz, 2002 — public domain via Wikimedia Commons"
+- file: "hero-ramp-v2.png"
+  credit: "Original AI-generated illustrative image; not a club photo"
 - file: "desk-pilot.jpg"
   credit: "Cessna 172S Skyhawk SP on the ramp at Luxembourg, Peter Bakema, 2010 — GFDL via Wikimedia Commons"
 - file: "desk-cockpit.jpg"

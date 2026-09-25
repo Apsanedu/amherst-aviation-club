@@ -1,5 +1,5 @@
 ---
-title: "Sim Station"
+title: "Flight Sim"
 description: "FlightGear setup, simulator lessons, Cessna 172 beginner missions, club rules."
 ---
 

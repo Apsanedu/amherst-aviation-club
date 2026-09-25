@@ -9,23 +9,10 @@
 <section>
   <div class="wrap">
     {{ .Content }}
-    {{ if eq .Section "guides" }}
-    <section class="taxonomy-directory" aria-labelledby="browse-title">
-      <h2 id="browse-title">Browse every topic</h2>
-      <div class="taxonomy-links">
-        {{ range .Site.Taxonomies.categories.Alphabetical }}
-        <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
-        {{ end }}
-        {{ range .Site.Taxonomies.tags.Alphabetical }}
-        <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
-        {{ end }}
-      </div>
-    </section>
-    {{ end }}
     {{ if eq .Section "resources" }}
-    {{ $groups := slice "Learning" "Programs" "Career & Scholarships" "Airline Pipeline" }}
-    {{ $blurbs := dict "Learning" "Ground school, test prep, and the free FAA books to start with." "Programs" "Youth programs and squadrons that get you around real airplanes." "Career & Scholarships" "Scholarships and communities across aviation — informational, not endorsements." "Airline Pipeline" "Official airline cadet and pathway programs — confirm costs and eligibility directly." }}
-    {{ $subgroups := dict "Learning" (slice "Ground school & FAA test prep") "Career & Scholarships" (slice "Career resources & scholarships") }}
+    {{ $groups := slice "Programs" "Career & Scholarships" "Airline Pipeline" }}
+    {{ $blurbs := dict "Programs" "Youth programs and squadrons that get you around real airplanes." "Career & Scholarships" "Scholarships and communities across aviation — informational, not endorsements." "Airline Pipeline" "Official airline cadet and pathway programs — confirm costs and eligibility directly." }}
+    {{ $subgroups := dict "Career & Scholarships" (slice "Career resources & scholarships") }}
     <nav class="resource-jump" aria-label="Jump to a resource section">
       {{ range $group := $groups }}
       {{ $n := len (where $.Site.Data.links "group" $group) }}
@@ -84,6 +71,56 @@
       </div>
     {{ end }}
     </div>
+    {{ end }}
+    {{ if eq .Section "guides" }}
+    {{ $learning := where $.Site.Data.links "group" "Learning" }}
+    {{ if $learning }}
+    <div class="resource-directory" style="margin-top:2rem">
+      <section class="resource-group" aria-labelledby="learning-links">
+        <h2 id="learning-links">Learning links</h2>
+        <p class="group-sub">Books, courses, and tools that go with the guides above.</p>
+        <section class="resource-subgroup" aria-labelledby="faa-links">
+          <h3 id="faa-links">FAA links</h3>
+          <ul class="resource-list">
+            {{ range where $learning "subgroup" "FAA links" }}
+            <li>
+              <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }} <span class="ext" aria-hidden="true">↗</span></a>
+              <p>{{ .note }}</p>
+            </li>
+            {{ end }}
+          </ul>
+        </section>
+        <section class="resource-subgroup" aria-labelledby="ground-school-test-prep">
+          <h3 id="ground-school-test-prep">Ground school &amp; FAA test prep</h3>
+          <ul class="resource-list">
+            {{ range where $learning "subgroup" "Ground school & FAA test prep" }}
+            <li>
+              <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }} <span class="ext" aria-hidden="true">↗</span></a>
+              <p>{{ .note }}</p>
+            </li>
+            {{ end }}
+          </ul>
+        </section>
+        {{ $tools := slice }}
+        {{ range $learning }}
+          {{ if not (isset . "subgroup") }}{{ $tools = $tools | append . }}{{ end }}
+        {{ end }}
+        {{ if $tools }}
+        <section class="resource-subgroup" aria-labelledby="study-tools">
+          <h3 id="study-tools">Tools &amp; references</h3>
+          <ul class="resource-list">
+            {{ range $tools }}
+            <li>
+              <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }} <span class="ext" aria-hidden="true">↗</span></a>
+              <p>{{ .note }}</p>
+            </li>
+            {{ end }}
+          </ul>
+        </section>
+        {{ end }}
+      </section>
+    </div>
+    {{ end }}
     {{ end }}
   </div>
 </section>

@@ -1,5 +1,6 @@
 ---
 title: "Discovery Flights: What to Expect"
+draft: true
 description: "Your cheapest first step into a real cockpit — what happens, what it costs, what to ask."
 categories: ["Learning to Fly"]
 tags: ["beginner", "student-pilot", "flight-training", "discovery-flight"]
@@ -20,4 +21,4 @@ A discovery flight is a short introductory lesson with a certificated flight ins
 - Ask which airplane you will fly and whether you can sit left seat.
 - Bring sunglasses, skip the heavy breakfast, and say something immediately if you feel queasy — instructors deal with it weekly.
 
-Check the [Flight Board](/flight-board/) for club-organized discovery flights, which are cheaper and more fun in a group.
+Check the [Flight Board]({{< relref "/flight-board" >}}) for club-organized discovery flights, which are cheaper and more fun in a group.

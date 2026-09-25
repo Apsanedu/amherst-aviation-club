@@ -21,4 +21,21 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') closeMenu();
   });
+
+  // Video facades: swap the thumbnail for the player on first click.
+  // Without JS the card remains a plain link to YouTube.
+  document.querySelectorAll('.video-facade[data-video]').forEach(link => {
+    link.addEventListener('click', event => {
+      if (link.dataset.playing) return;
+      event.preventDefault();
+      link.dataset.playing = 'true';
+      const frame = document.createElement('iframe');
+      frame.src = 'https://www.youtube-nocookie.com/embed/' + link.dataset.video + '?autoplay=1&rel=0';
+      frame.title = link.getAttribute('aria-label') || 'Embedded video player';
+      frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      frame.allowFullscreen = true;
+      link.querySelectorAll('img, .play').forEach(n => n.remove());
+      link.appendChild(frame);
+    });
+  });
 });

@@ -1,0 +1,18 @@
+# Sim Challenge series (FlightInsight) featured on the Flight Sim page.
+# Thumbnails load from YouTube; the player only loads after a click.
+- part: "Part 1"
+  id: "3ThYKYXeCkc"
+  title: "IFR Flight Planning"
+  blurb: "Watch an instructor plan the whole flight — route, charts, and weather minimums — before ever touching the throttle."
+- part: "Part 2"
+  id: "mpAxVEmQZKM"
+  title: "IFR Clearance Practice and Departure Planning"
+  blurb: "How to copy an IFR clearance and set up the departure. Great radio-call practice even for VFR beginners."
+- part: "Part 3"
+  id: "F_auJnWffg4"
+  title: "IFR Departure and Enroute Flight"
+  blurb: "Fly the departure and manage the enroute segment: headings, altitudes, and staying ahead of the airplane."
+- part: "Part 4"
+  id: "ye3LE5b_5uU"
+  title: "How to Fly an ILS Approach"
+  blurb: "The finale: intercept the localizer, ride the glideslope, and land on instruments. Try it in the sim after."

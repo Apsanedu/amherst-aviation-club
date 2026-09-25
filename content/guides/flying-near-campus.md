@@ -1,5 +1,6 @@
 ---
 title: "Flying Near Campus: Local Fields"
+draft: true
 description: "The airports around Amherst worth knowing first — towered, non-towered, and club-trip material."
 categories: ["Learning to Fly"]
 tags: ["beginner", "airports", "navigation", "field-trips"]
@@ -16,4 +17,4 @@ You do not need to travel far to be around airplanes. The Connecticut River vall
 
 ### Make it a trip, not just a list
 
-Check the [Flight Board](/flight-board/) for organized airport tours. Visiting with the club gets you ramp access and CFI narration you will never get driving there alone. Always confirm details with the airport before visiting.
+Check the [Flight Board]({{< relref "/flight-board" >}}) for organized airport tours. Visiting with the club gets you ramp access and CFI narration you will never get driving there alone. Always confirm details with the airport before visiting.

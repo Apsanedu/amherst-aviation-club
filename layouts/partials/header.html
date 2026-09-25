@@ -1,6 +1,6 @@
 <header class="site-header" role="banner">
   <div class="header-inner">
-    <a class="brand" href="{{ .Site.Home.Permalink }}" aria-label="Amherst Aviation Club home">
+    <a class="brand" href="{{ .Site.Home.RelPermalink }}" aria-label="Amherst Aviation Club home">
       <span class="brand-emblem" aria-hidden="true">
         <svg viewBox="0 0 64 64" width="44" height="44" role="img" aria-label="Club emblem: small airplane over runway wings">
           <circle cx="32" cy="32" r="30" fill="#faf5e9" stroke="#5d4127" stroke-width="2.5"/>
@@ -22,7 +22,7 @@
       </button>
       <ul id="nav-list" class="nav-list">
         {{ range .Site.Menus.main }}
-        <li><a href="{{ .URL | absURL }}" {{ if eq $.RelPermalink (.URL | relURL) }}aria-current="page"{{ end }}>{{ .Name }}</a></li>
+        <li><a href="{{ .URL | relURL }}" {{ if eq $.RelPermalink (.URL | relURL) }}aria-current="page"{{ end }}>{{ .Name }}</a></li>
         {{ end }}
         <li class="nav-cta"><a class="btn btn-cta" href="{{ .Site.Params.joinForm }}" target="_blank" rel="noopener">Join the Club</a></li>
       </ul>

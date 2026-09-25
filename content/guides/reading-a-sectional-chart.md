@@ -1,5 +1,6 @@
 ---
 title: "How to Read a Sectional Chart"
+draft: true
 description: "Airports, airspace, and terrain on the VFR pilot's road map — no memorization required."
 categories: ["Ground School & FAA"]
 tags: ["beginner", "navigation", "faa", "charts"]

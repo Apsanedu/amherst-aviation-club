@@ -5,5 +5,5 @@
 # Hugo's generated image cache
 /resources/_gen/
 
-# Local tooling — never commit
-/node_modules/
+# Local tooling — never commit (also matches the node_modules symlink)
+node_modules

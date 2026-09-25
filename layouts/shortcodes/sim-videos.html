@@ -1,0 +1,23 @@
+{{/* Sim Challenge video shelf. Click-to-play facades: fast, private, on-brand.
+  Thumbnails lazy-load; the YouTube player only loads after a click.
+  Without JS, each card links out to the video. */}}
+<section class="video-shelf" aria-labelledby="sim-videos-title">
+  <h2 id="sim-videos-title">Sim Challenge video nights</h2>
+  <p class="section-sub">Follow along with FlightInsight's four-part simulated IFR flight, then try each leg yourself in FlightGear. Tap a card to play it right here.</p>
+  <div class="video-grid">
+    {{ range .Site.Data.videos }}
+    <article class="video-card">
+      <a class="video-facade" data-video="{{ .id }}" href="https://www.youtube.com/watch?v={{ .id }}&list=PLWCnp9tjvIPfGLk0MRhVw7s94x4TChvms" target="_blank" rel="noopener" aria-label="Play video: {{ .title }} ({{ .part }})">
+        <img src="https://i.ytimg.com/vi/{{ .id }}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+        <span class="play" aria-hidden="true">▶</span>
+      </a>
+      <div class="video-body">
+        <span class="tag">{{ .part }} · FlightInsight</span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .blurb }}</p>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+  <p class="video-more"><a class="btn btn-ghost" href="https://www.youtube.com/playlist?list=PLWCnp9tjvIPfGLk0MRhVw7s94x4TChvms" target="_blank" rel="noopener">Full Sim Challenge playlist ↗</a></p>
+</section>

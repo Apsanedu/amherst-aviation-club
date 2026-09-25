@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-<link rel="icon" href="{{ "favicon.svg" | absURL }}" type="image/svg+xml">
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
 {{ $css := resources.Get "css/main.css" }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 <meta name="theme-color" content="#1b2a4a">

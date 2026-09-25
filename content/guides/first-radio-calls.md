@@ -1,5 +1,6 @@
 ---
 title: "Your First Radio Calls"
+draft: true
 description: "The four transmissions every student learns first — with plain-English templates."
 categories: ["Ground School & FAA"]
 tags: ["beginner", "communication", "student-pilot", "faa"]
@@ -16,4 +17,4 @@ Radio work feels intimidating until you realize it is mostly fill-in-the-blank. 
 
 ### Practice free
 
-Listen to [LiveATC](https://www.liveatc.net/) for your local field, write down the pattern of calls, then rehearse them aloud at [Sim Station](/sim-station/) before ever keying a real mic.
+Listen to [LiveATC](https://www.liveatc.net/) for your local field, write down the pattern of calls, then rehearse them aloud at [Sim Station]({{< relref "/sim-station" >}}) before ever keying a real mic.

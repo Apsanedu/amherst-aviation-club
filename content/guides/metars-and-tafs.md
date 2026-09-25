@@ -1,5 +1,6 @@
 ---
 title: "METARs & TAFs: Decode Airport Weather"
+draft: true
 description: "Read the two coded reports pilots check before every flight — in under ten minutes."
 categories: ["Weather & Planning"]
 tags: ["weather", "beginner", "decision-making", "faa"]
@@ -18,4 +19,4 @@ Wind first (can you handle the crosswind?), then visibility and ceiling (is it V
 
 ### Build the habit
 
-Read this guide's companion, [Aviation Weather: A Beginner's Reading Routine](/guides/aviation-weather-starter/), then pull a real METAR for the nearest field before every club meeting and brief it in one sentence: *"VFR, windy, getting worse after 3 PM."*
+Read this guide's companion, [Aviation Weather: A Beginner's Reading Routine]({{< relref "/guides/aviation-weather-starter" >}}), then pull a real METAR for the nearest field before every club meeting and brief it in one sentence: *"VFR, windy, getting worse after 3 PM."*

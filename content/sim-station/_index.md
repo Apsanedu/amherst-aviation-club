@@ -25,3 +25,5 @@ Free, friendly, and the best way to learn before you burn avgas.
 </div>
 
 Bring a laptop + mouse. Club yoke + checklist binder stay at the desk.
+
+{{< sim-videos >}}

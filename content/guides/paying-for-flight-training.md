@@ -1,5 +1,6 @@
 ---
 title: "Paying for Flight Training: Costs & Scholarships"
+draft: true
 description: "What a private pilot certificate really costs, and where students find help paying for it."
 categories: ["Learning to Fly"]
 tags: ["beginner", "student-pilot", "private-pilot", "scholarships", "costs"]
@@ -17,4 +18,4 @@ A private pilot certificate in the Northeast typically runs **$12,000–$17,000*
 
 Apply early and broadly: EAA chapters, AOPA, Women in Aviation, OBAP, and local airport associations all fund student pilots. Deadlines cluster in winter and spring for summer flying.
 
-See [Resources](/resources/) for the club's current scholarship links, and ask at club night — someone usually knows which applications are open.
+See [Resources]({{< relref "/resources" >}}) for the club's current scholarship links, and ask at club night — someone usually knows which applications are open.

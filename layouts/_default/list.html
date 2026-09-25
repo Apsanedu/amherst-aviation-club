@@ -22,6 +22,55 @@
       </div>
     </section>
     {{ end }}
+    {{ if eq .Section "resources" }}
+    {{ $groups := slice "Learning" "Programs" "Career & Scholarships" "Airline Pipeline" }}
+    {{ $blurbs := dict "Learning" "Ground school, test prep, and the free FAA books to start with." "Programs" "Youth programs and squadrons that get you around real airplanes." "Career & Scholarships" "Scholarships and communities across aviation — informational, not endorsements." "Airline Pipeline" "Official airline cadet and pathway programs — confirm costs and eligibility directly." }}
+    {{ $subgroups := dict "Learning" (slice "Ground school & FAA test prep") "Career & Scholarships" (slice "Career resources & scholarships") }}
+    <nav class="resource-jump" aria-label="Jump to a resource section">
+      {{ range $group := $groups }}
+      {{ $n := len (where $.Site.Data.links "group" $group) }}
+      <a href="#{{ $group | urlize }}">{{ $group }} <span class="count" aria-label="{{ $n }} links">{{ $n }}</span></a>
+      {{ end }}
+    </nav>
+    <div class="resource-directory">
+      {{ range $group := $groups }}
+      <section class="resource-group" aria-labelledby="{{ $group | urlize }}">
+        <h2 id="{{ $group | urlize }}">{{ $group }}</h2>
+        <p class="group-sub">{{ index $blurbs $group }}</p>
+        {{ $ungrouped := slice }}
+        {{ range where $.Site.Data.links "group" $group }}
+          {{ if not (isset . "subgroup") }}{{ $ungrouped = $ungrouped | append . }}{{ end }}
+        {{ end }}
+        {{ if $ungrouped }}
+        <ul class="resource-list">
+          {{ range $ungrouped }}
+          <li>
+            <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }} <span class="ext" aria-hidden="true">↗</span></a>
+            <p>{{ .note }}</p>
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+        {{ $subs := index $subgroups $group }}
+        {{ if $subs }}
+        {{ range $subgroup := $subs }}
+        <section class="resource-subgroup" aria-labelledby="{{ $subgroup | urlize }}">
+          <h3 id="{{ $subgroup | urlize }}">{{ $subgroup }}</h3>
+          <ul class="resource-list">
+            {{ range where $.Site.Data.links "subgroup" $subgroup }}
+            <li>
+              <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }} <span class="ext" aria-hidden="true">↗</span></a>
+              <p>{{ .note }}</p>
+            </li>
+            {{ end }}
+          </ul>
+        </section>
+        {{ end }}
+        {{ end }}
+      </section>
+      {{ end }}
+    </div>
+    {{ else }}
     <div class="starter-grid">
     {{ range .Pages.ByDate }}
       <article class="do-card">
@@ -35,6 +84,7 @@
       </div>
     {{ end }}
     </div>
+    {{ end }}
   </div>
 </section>
 {{ end }}

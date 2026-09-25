@@ -4,3 +4,6 @@
 
 # Hugo's generated image cache
 /resources/_gen/
+
+# Local tooling — never commit
+/node_modules/

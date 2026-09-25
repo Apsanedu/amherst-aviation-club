@@ -1,0 +1,6 @@
+# Hugo build output and transient lock file
+/public/
+/.hugo_build.lock
+
+# Hugo's generated image cache
+/resources/_gen/

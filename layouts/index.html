@@ -1,0 +1,238 @@
+{{ define "main" }}
+{{ $hero := resources.Get "img/hero-ramp.jpg" }}
+{{ $pilot := resources.Get "img/desk-pilot.jpg" }}
+{{ $airport := resources.Get "img/desk-airport.jpg" }}
+{{ $cockpit := resources.Get "img/desk-cockpit.jpg" }}
+{{ $trainer := resources.Get "img/desk-trainer.jpg" }}
+{{ $wing := resources.Get "img/desk-wing.jpg" }}
+<section class="hero hero-clean" aria-labelledby="hero-title">
+  <div class="wrap hero-inner hero-centered">
+    <div class="hero-copy">
+      <div class="hero-graphic" role="img" aria-label="Illustration of a small high-wing airplane flying over a runway under soft clouds">
+        <svg viewBox="0 0 340 190" width="340" height="190" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="heroSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#dce8f0"/>
+              <stop offset="1" stop-color="#a9c6d8"/>
+            </linearGradient>
+            <linearGradient id="heroGround" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f3ead3"/>
+              <stop offset="1" stop-color="#e6d7b8"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="170" cy="95" rx="160" ry="86" fill="url(#heroSky)" stroke="#5d4127" stroke-width="4"/>
+          <ellipse cx="170" cy="95" rx="148" ry="75" fill="none" stroke="#3f1f69" stroke-width="1.5" stroke-dasharray="4 5" opacity="0.55"/>
+          <circle cx="252" cy="52" r="20" fill="#faf5e9" opacity="0.95" stroke="#e6d7b8" stroke-width="2"/>
+          <g fill="#faf5e9" stroke="#8fa9bd" stroke-width="2" opacity="0.95">
+            <ellipse cx="90" cy="58" rx="34" ry="12"/>
+            <ellipse cx="114" cy="52" rx="24" ry="10"/>
+            <ellipse cx="228" cy="92" rx="28" ry="10"/>
+          </g>
+          <path d="M40 60 C 90 90, 150 100, 210 78" fill="none" stroke="#1b2a4a" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.7"/>
+          <g>
+            <path d="M170 58 L178 92 L226 102 L178 106 L175 128 L165 128 L162 106 L114 102 L162 92 Z" fill="#1b2a4a"/>
+            <path d="M162 92 L178 92 L176 100 L164 100 Z" fill="#c96a1b"/>
+            <circle cx="120" cy="66" r="4" fill="#c96a1b"/>
+          </g>
+          <g>
+            <rect x="62" y="138" width="216" height="26" rx="6" fill="url(#heroGround)" stroke="#5d4127" stroke-width="3"/>
+            <line x1="78" y1="151" x2="262" y2="151" stroke="#5d4127" stroke-width="3" stroke-dasharray="14 10"/>
+            <rect x="62" y="138" width="10" height="26" rx="3" fill="#3f1f69"/>
+            <rect x="268" y="138" width="10" height="26" rx="3" fill="#3f1f69"/>
+          </g>
+          <g>
+            <line x1="292" y1="120" x2="292" y2="148" stroke="#3e2c19" stroke-width="4"/>
+            <path d="M292 120 L314 126 L292 133 Z" fill="#c96a1b" stroke="#7d3f0d" stroke-width="2"/>
+          </g>
+        </svg>
+      </div>
+      <h1 id="hero-title">Do you have what it takes to fly an airplane?</h1>
+      <p class="hero-sub">A hands-on student club exploring airplanes, flight simulation, aviation careers, and the path to getting PPL.</p>
+      <div class="hero-actions">
+        <a class="btn btn-cta" href="#join">Join the Club</a>
+      </div>
+      {{ with $hero }}
+      {{ $h := .Fill "1200x630 center" }}
+      <figure class="hero-photo polaroid">
+        <img src="{{ $h.RelPermalink }}" alt="Cessna 172 airplane just after takeoff over the runway" width="1200" height="630" fetchpriority="high">
+        <figcaption>Placeholder photo — swap with club shots anytime</figcaption>
+      </figure>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="desk" id="desk" aria-labelledby="desk-title">
+  <div class="wrap">
+    <div class="desk-head">
+      <span class="section-label">The Aviator's Desk</span>
+      <h2 id="desk-title">Pick something up. Start somewhere.</h2>
+      <p>Five big, touch-friendly stations. Each one is a real club area — tap the label to open guides, checklists, and trips. On desktop hover gives a little lift; on touch everything works with a tap.</p>
+    </div>
+    <div class="desk-grid">
+      <article class="desk-card">
+        <div class="desk-art desk-photo">
+          <span class="pin left"></span><span class="pin right"></span>
+          {{ with $pilot }}
+          {{ $s := .Fill "800x460 center" }}
+          <img src="{{ $s.RelPermalink }}" alt="Cessna 172S Skyhawk parked on the airport ramp" width="800" height="460" loading="lazy">
+          {{ end }}
+        </div>
+        <div class="desk-body">
+          <span class="tag">Station 01 · Poster</span>
+          <h3>Pilot's Path</h3>
+          <p>PPL pathway, discovery flights, careers, scholarships, and orgs. Zero to first solo, explained plainly.</p>
+          <a class="desk-link" href="/pilots-path/">Open Pilot's Path <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="desk-card">
+        <div class="desk-art desk-photo">
+          {{ with $airport }}
+          {{ $s := .Fill "800x460 center" }}
+          <img src="{{ $s.RelPermalink }}" alt="Aerial view of an airport with runways" width="800" height="460" loading="lazy">
+          {{ end }}
+        </div>
+        <div class="desk-body">
+          <span class="tag">Station 02 · Bookshelf</span>
+          <h3>Bookshelf</h3>
+          <p>Ground-school topics, weather, navigation, systems. FAA-style handbooks + student favorites.</p>
+          <a class="desk-link" href="/bookshelf/">Browse the Bookshelf <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="desk-card">
+        <div class="desk-art desk-photo">
+          {{ with $cockpit }}
+          {{ $s := .Fill "800x460 center" }}
+          <img src="{{ $s.RelPermalink }}" alt="Cessna 172 instrument panel with flight controls" width="800" height="460" loading="lazy">
+          {{ end }}
+        </div>
+        <div class="desk-body">
+          <span class="tag">Station 03 · Laptop + Yoke</span>
+          <h3>Sim Station</h3>
+          <p>FlightGear setup, Cessna 172 beginner missions, sim lessons, and club rules.</p>
+          <a class="desk-link" href="/sim-station/">Start the Sim <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="desk-card">
+        <div class="desk-art desk-photo">
+          {{ with $trainer }}
+          {{ $s := .Fill "800x460 center" }}
+          <img src="{{ $s.RelPermalink }}" alt="Trainer aircraft cockpit with control stick and gauges" width="800" height="460" loading="lazy">
+          {{ end }}
+        </div>
+        <div class="desk-body">
+          <span class="tag">Station 04 · Gear Locker</span>
+          <h3>Gear Locker</h3>
+          <p>Headsets, bags, yokes, pedals, checklists. Beginner picks + budget club kit.</p>
+          <a class="desk-link" href="/gear-locker/">Open the Locker <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="desk-card">
+        <div class="desk-art desk-photo">
+          <span class="pin left"></span><span class="pin right"></span>
+          {{ with $wing }}
+          {{ $s := .Fill "800x460 center" }}
+          <img src="{{ $s.RelPermalink }}" alt="Airplane wing over clouds at sunset" width="800" height="460" loading="lazy">
+          {{ end }}
+        </div>
+        <div class="desk-body">
+          <span class="tag">Station 05 · Flight Board</span>
+          <h3>Flight Board</h3>
+          <p>Confirmed club updates and ways to stay connected. Check back when there is news to share.</p>
+          <a class="desk-link" href="/flight-board/">Check the Board <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="what-title">
+  <div class="wrap">
+    <span class="section-label">What we do</span>
+    <h2 class="section-title" id="what-title">Four ways to get airborne</h2>
+    <p class="section-sub">You don't need to want to be an airline pilot. Come curious — leave with a logbook entry, a sim landing, or a museum ticket stub.</p>
+    <div class="do-grid">
+      <div class="do-card"><div class="do-icon" aria-hidden="true">📘</div><h3>Learn to Fly</h3><p>PPL steps, discovery flights, medical + costs in plain English.</p></div>
+      <div class="do-card"><div class="do-icon" aria-hidden="true">🧭</div><h3>Explore Aviation Careers</h3><p>Pilots, ATC, maintenance, aerospace, dispatch — plus scholarships.</p></div>
+      <div class="do-card"><div class="do-icon" aria-hidden="true">🕹️</div><h3>Practice in the Sim</h3><p>Free FlightGear, club yoke nights, Cessna 172 missions for day one.</p></div>
+      <div class="do-card"><div class="do-icon" aria-hidden="true">🏛️</div><h3>Visit Airports &amp; Museums</h3><p>Tours, tower visits, and New England aviation museums together.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="board-section" aria-labelledby="board-title">
+  <div class="wrap">
+    <span class="section-label">Upcoming Flight Board</span>
+    <h2 class="section-title" id="board-title">Next departures</h2>
+    <div class="board-frame">
+      {{ $events := where .Site.RegularPages "Section" "events" }}
+      {{ $upcoming := sort $events "Params.date" "asc" }}
+      {{ if gt (len $upcoming) 0 }}
+      <div class="event-grid">
+        {{ range first 3 $upcoming }}
+        <article class="event-card">
+          <time datetime="{{ .Params.date }}">{{ with .Params.date }}{{ dateFormat "Mon, Jan 2 · 3:04 PM" . }}{{ end }}</time>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p>{{ with .Params.location }}📍 {{ . }}<br>{{ end }}{{ .Summary | truncate 110 }}</p>
+        </article>
+        {{ end }}
+      </div>
+      <p style="margin-top:1rem"><a class="btn btn-paper" href="/events/">See all events →</a></p>
+      {{ else }}
+      <div class="empty-board" role="status">
+        <p style="font-size:2rem;margin:0" aria-hidden="true">🛫 — — —</p>
+        <h3 style="color:#fff;margin:.4rem 0">No club updates posted yet</h3>
+        <p>Meeting details are announced to interested members. Reach out to stay in the loop.</p>
+        <p><a class="btn btn-cta" href="#join">Get in touch</a></p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="join" id="join" aria-labelledby="join-title">
+  <div class="wrap">
+    <span class="section-label">Join</span>
+    <h2 class="section-title" id="join-title">Your runway into aviation starts here.</h2>
+    <p class="section-sub">Meetings weekly. Bring a friend. <span class="no-exp">No flying experience required.</span></p>
+    <div class="join-grid">
+      <div class="meeting-card">
+        <h3>📍 Find us</h3>
+        <p><span class="badge">{{ .Site.Params.meetingTime }}</span></p>
+        <p>{{ .Site.Params.meetingPlace }}{{ with .Site.Params.advisor }}<br>Advisor: {{ . }}{{ end }}{{ with .Site.Params.contact }}<br>{{ . }}{{ end }}</p>
+        <p style="color:#f0e3c6">Interested in flying or airplanes? Contact details will be posted when they are ready to share.</p>
+      </div>
+      <div class="clipboard">
+        <div class="clip-top">✎ INTEREST FORM · CLIPBOARD</div>
+        {{ with .Site.Params.contact }}
+        <form class="clip-body" action="mailto:{{ . }}" method="post" enctype="text/plain">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" autocomplete="name" required placeholder="Alex Mammoth">
+          <label for="f-email">School email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@amherst.edu">
+          <label for="f-interest">I'm curious about…</label>
+          <select id="f-interest" name="interest">
+            <option>Learning to fly (PPL)</option>
+            <option>Flight simulation</option>
+            <option>Aviation careers</option>
+            <option>Museum / airport trips</option>
+          </select>
+          <label for="f-msg">Anything else? (optional)</label>
+          <textarea id="f-msg" name="message" rows="3" placeholder="Never flown, love window seats…"></textarea>
+          <p style="margin-top:.9rem"><button class="btn btn-cta" type="submit">Send interest →</button></p>
+          <p class="note-small">Static-site friendly: opens your email app. Swap action for Formspree/Netlify later.</p>
+        </form>
+        {{ else }}
+        <div class="clip-body">
+          <p>Our interest form is coming soon. Check back here for a way to get in touch.</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

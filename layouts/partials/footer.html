@@ -1,0 +1,21 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p><strong>Amherst Aviation Club</strong></p>
+      <p>A student hangar for the curious. No flying experience required.</p>
+      <p class="footer-meta">{{ .Site.Params.meetingTime }} · {{ .Site.Params.meetingPlace }}{{ with .Site.Params.advisor }}<br>Advisor: {{ . }}{{ end }}{{ with .Site.Params.contact }}<br>{{ . }}{{ end }}</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="footer-links">
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+        <li><a href="/pilots-path/">Pilot's Path</a></li>
+        <li><a href="/bookshelf/">Bookshelf</a></li>
+        <li><a href="/gear-locker/">Gear Locker</a></li>
+        <li><a href="/flight-board/">Flight Board</a></li>
+      </ul>
+    </nav>
+    <p class="footer-note">Original generic emblem. Mammoth Purple used as accent only. Built with Hugo for fast, accessible reading.<br>Placeholder photos: Wikimedia Commons contributors (see data/photos.yaml) + free stock — replace with club shots anytime.</p>
+  </div>
+</footer>

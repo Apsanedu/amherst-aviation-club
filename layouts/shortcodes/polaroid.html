@@ -1,0 +1,16 @@
+{{/* Polaroid photo shortcode for content pages.
+  Usage: {{< polaroid src="hero-ramp.jpg" alt="..." caption="..." >}}
+  Falls back to a styled placeholder if the file is missing. */}}
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" | default "Aviation photo" }}
+{{ $cap := .Get "caption" }}
+{{ $img := resources.Get (printf "img/%s" $src) }}
+<figure class="polaroid">
+  {{ if $img }}
+    {{ $s := $img.Fill "800x500 center" }}
+    <img src="{{ $s.RelPermalink }}" alt="{{ $alt }}" loading="lazy" width="800" height="500">
+  {{ else }}
+    <div class="photo-placeholder" role="img" aria-label="{{ $alt }}">Photo coming soon</div>
+  {{ end }}
+  {{ with $cap }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>

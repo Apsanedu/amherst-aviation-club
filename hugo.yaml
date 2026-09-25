@@ -1,0 +1,41 @@
+baseURL: "https://amherstaviation.example.org/"
+title: "Amherst Aviation Club"
+languageCode: "en-US"
+enableRobotsTXT: true
+
+params:
+  description: "All about flying and airplanes: a student club for Amherst and the Five Colleges."
+  meetingTime: "Meeting details announced to interested members"
+  meetingPlace: "Location announced to interested members"
+  advisor: ""
+  contact: ""
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "About"
+      url: "/about/"
+      weight: 2
+    - name: "Guides"
+      url: "/guides/"
+      weight: 3
+    - name: "Sim Station"
+      url: "/sim-station/"
+      weight: 4
+    - name: "Club Updates"
+      url: "/events/"
+      weight: 5
+    - name: "Resources"
+      url: "/resources/"
+      weight: 6
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+taxonomies:
+  category: "categories"
+  tag: "tags"

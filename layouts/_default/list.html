@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="page-hero">
+  <div class="wrap prose">
+    <span class="section-label">Index</span>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    {{ .Content }}
+    <div class="starter-grid">
+    {{ range .Pages.ByDate }}
+      <article class="do-card">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p>{{ .Summary | truncate 140 }}</p>
+      </article>
+    {{ else }}
+      <div class="empty-board" role="status" style="grid-column:1/-1">
+        <h3 style="color:#fff">Nothing filed here yet</h3>
+        <p>Check back soon — or bring an idea to club night.</p>
+      </div>
+    {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

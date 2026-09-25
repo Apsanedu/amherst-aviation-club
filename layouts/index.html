@@ -49,7 +49,7 @@
       <h1 id="hero-title">All about flying and airplanes.</h1>
       <p class="hero-sub">A practical home base for Five College students to explore flight training, Flight Sim, aircraft, and aviation history.</p>
       <div class="hero-actions">
-        <a class="btn btn-cta" href="#join">Join the Club</a>
+        <a class="btn btn-cta" href="{{ .Site.Params.joinForm }}" target="_blank" rel="noopener">Join the Club</a>
       </div>
       {{ with $hero }}
       {{ $h := .Fill "1200x630 center" }}
@@ -186,8 +186,8 @@
       <div class="empty-board" role="status">
         <p style="font-size:2rem;margin:0" aria-hidden="true">🛫 — — —</p>
         <h3 style="color:#fff;margin:.4rem 0">No club updates posted yet</h3>
-        <p>Meeting details are announced to interested members. Reach out to stay in the loop.</p>
-        <p><a class="btn btn-cta" href="#join">Get in touch</a></p>
+        <p>Meeting details are announced to interested members. Fill out the interest form to stay in the loop.</p>
+        <p><a class="btn btn-cta" href="{{ .Site.Params.joinForm }}" target="_blank" rel="noopener">Join the Club</a></p>
       </div>
       {{ end }}
     </div>
@@ -204,33 +204,15 @@
         <h3>📍 Find us</h3>
         <p><span class="badge">{{ .Site.Params.meetingTime }}</span></p>
         <p>{{ .Site.Params.meetingPlace }}{{ with .Site.Params.advisor }}<br>Advisor: {{ . }}{{ end }}{{ with .Site.Params.contact }}<br>{{ . }}{{ end }}</p>
-        <p style="color:#f0e3c6">Interested in flying or airplanes? Contact details will be posted when they are ready to share.</p>
+        <p style="color:#f0e3c6">Interested in flying or airplanes? Fill out the interest form and we’ll share club details when they are ready.</p>
       </div>
       <div class="clipboard">
         <div class="clip-top">✎ INTEREST FORM · CLIPBOARD</div>
-        {{ with .Site.Params.contact }}
-        <form class="clip-body" action="mailto:{{ . }}" method="post" enctype="text/plain">
-          <label for="f-name">Name</label>
-          <input id="f-name" name="name" autocomplete="name" required placeholder="Alex Mammoth">
-          <label for="f-email">School email</label>
-          <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@amherst.edu">
-          <label for="f-interest">I'm curious about…</label>
-          <select id="f-interest" name="interest">
-            <option>Learning to fly (PPL)</option>
-            <option>Flight simulation</option>
-            <option>Aviation careers</option>
-            <option>Museum / airport trips</option>
-          </select>
-          <label for="f-msg">Anything else? (optional)</label>
-          <textarea id="f-msg" name="message" rows="3" placeholder="Never flown, love window seats…"></textarea>
-          <p style="margin-top:.9rem"><button class="btn btn-cta" type="submit">Send interest →</button></p>
-          <p class="note-small">Static-site friendly: opens your email app. Swap action for Formspree/Netlify later.</p>
-        </form>
-        {{ else }}
         <div class="clip-body">
-          <p>Our interest form is coming soon. Check back here for a way to get in touch.</p>
+          <p>Tell us what you’re interested in, and we’ll share club details as they are announced.</p>
+          <p style="margin-top:1rem"><a class="btn btn-cta" href="{{ .Site.Params.joinForm }}" target="_blank" rel="noopener">Open the interest form →</a></p>
+          <p class="note-small">The form opens in a new tab.</p>
         </div>
-        {{ end }}
       </div>
     </div>
   </div>

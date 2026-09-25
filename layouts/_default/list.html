@@ -9,6 +9,19 @@
 <section>
   <div class="wrap">
     {{ .Content }}
+    {{ if eq .Section "guides" }}
+    <section class="taxonomy-directory" aria-labelledby="browse-title">
+      <h2 id="browse-title">Browse every topic</h2>
+      <div class="taxonomy-links">
+        {{ range .Site.Taxonomies.categories.Alphabetical }}
+        <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
+        {{ end }}
+        {{ range .Site.Taxonomies.tags.Alphabetical }}
+        <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
     <div class="starter-grid">
     {{ range .Pages.ByDate }}
       <article class="do-card">

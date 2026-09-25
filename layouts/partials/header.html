@@ -24,7 +24,7 @@
         {{ range .Site.Menus.main }}
         <li><a href="{{ .URL | absURL }}" {{ if eq $.RelPermalink (.URL | relURL) }}aria-current="page"{{ end }}>{{ .Name }}</a></li>
         {{ end }}
-        <li class="nav-cta"><a class="btn btn-cta" href="{{ printf "%s#join" .Site.Home.Permalink }}">Join the Club</a></li>
+        <li class="nav-cta"><a class="btn btn-cta" href="{{ .Site.Params.joinForm }}" target="_blank" rel="noopener">Join the Club</a></li>
       </ul>
     </nav>
   </div>

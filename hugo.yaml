@@ -9,6 +9,7 @@ params:
   meetingPlace: "Location announced to interested members"
   advisor: ""
   contact: ""
+  joinForm: "https://docs.google.com/forms/d/e/1FAIpQLSeZMzWVA3qa5LHEPsb0pbhfqQhyW0TCQwuEmJYl7A5WcNR_4g/viewform?usp=publish-editor"
 
 menu:
   main:

@@ -9,7 +9,7 @@ Think of this poster as your map. You don't need to decide to become a pilot —
 
 - **Discovery flight** (~30–45 min with a CFI at a local field like KCEF / KBAF — placeholder). You handle the controls in cruise.
 - **Chair-flying:** sit, touch-poster, say checklists out loud. Sounds silly, works brilliantly.
-- **Sim first:** do Mission 1 in [Flight Sim](/sim-station/) before you pay for Hobbs time.
+- **Sim first:** do Mission 1 in [Flight Sim]({{< relref "sim-station" >}}) before you pay for Hobbs time.
 
 ### 2. Private Pilot License (PPL) in plain English
 
@@ -30,6 +30,6 @@ Pilots, flight dispatch, ATC, A&P maintenance, aerospace engineering, aviation m
 
 - EAA Young Eagles, AOPA, Women in Aviation, OBAP, Latino Pilots Assoc.
 - Local EAA chapter rides + FAA WINGS seminars.
-- Full link list lives in [Resources](/resources/).
+- Full link list lives in [Resources]({{< relref "resources" >}}).
 
-**Next step:** come Thursday, try the sim, sign the interest form on [home](/#join).
+**Next step:** come Thursday, try the sim, and check the [home page]({{< relref "/" >}}#join) for contact details when they are available.

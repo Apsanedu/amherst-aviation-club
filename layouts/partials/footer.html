@@ -8,12 +8,12 @@
     <nav aria-label="Footer">
       <ul class="footer-links">
         {{ range .Site.Menus.main }}
-        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
         {{ end }}
-        <li><a href="/pilots-path/">Pilot's Path</a></li>
-        <li><a href="/bookshelf/">Bookshelf</a></li>
-        <li><a href="/gear-locker/">Gear Locker</a></li>
-        <li><a href="/flight-board/">Flight Board</a></li>
+        <li><a href="{{ "pilots-path/" | absURL }}">Pilot's Path</a></li>
+        <li><a href="{{ "bookshelf/" | absURL }}">Bookshelf</a></li>
+        <li><a href="{{ "gear-locker/" | absURL }}">Gear Locker</a></li>
+        <li><a href="{{ "flight-board/" | absURL }}">Flight Board</a></li>
       </ul>
     </nav>
     <p class="footer-note">Original generic emblem. Mammoth Purple used as accent only. Built with Hugo for fast, accessible reading.<br>Placeholder photos: Wikimedia Commons contributors (see data/photos.yaml) + free stock — replace with club shots anytime.</p>

@@ -19,4 +19,4 @@ Our shelf is small on purpose — five books that actually get you airborne in k
 - Stick and Rudder — Wolfgang Langewiesche (library)
 - Weather Flying — Robert Buck (chapters 1–3)
 
-All links + PDFs indexed in [Resources](/resources/). Suggest a book at club night and we'll shelve it.
+All links + PDFs are indexed in [Resources]({{< relref "resources" >}}). Suggest a book at club night and we'll shelve it.

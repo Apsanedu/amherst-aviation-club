@@ -28,7 +28,7 @@
     {{ if eq .Section "events" }}
     <p class="note-small">📍 {{ .Params.location }} · <time datetime="{{ .Params.date }}">{{ with .Params.date }}{{ dateFormat "Monday, Jan 2, 2006 at 3:04 PM" . }}{{ end }}</time></p>
     {{ end }}
-    <p style="margin-top:1.5rem"><a class="btn btn-ghost" href="/">← Back to the Desk</a> <a class="btn btn-cta" href="/#join">Join the Club</a></p>
+    <p style="margin-top:1.5rem"><a class="btn btn-ghost" href="{{ .Site.Home.Permalink }}">← Back to the Desk</a> <a class="btn btn-cta" href="{{ printf "%s#join" .Site.Home.Permalink }}">Join the Club</a></p>
   </div>
 </section>
 {{ end }}

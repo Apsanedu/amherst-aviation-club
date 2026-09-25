@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $hero := resources.Get "img/hero-ramp-v2.png" }}
+{{ $hero := resources.Get "img/hero-ramp.jpg" }}
 {{ $pilot := resources.Get "img/desk-pilot.jpg" }}
 {{ $airport := resources.Get "img/desk-airport.jpg" }}
 {{ $cockpit := resources.Get "img/desk-cockpit.jpg" }}
@@ -8,7 +8,44 @@
 <section class="hero hero-clean" aria-labelledby="hero-title">
   <div class="wrap hero-inner hero-centered">
     <div class="hero-copy">
-      <span class="section-label">Amherst Aviation Club</span>
+      <div class="hero-graphic" role="img" aria-label="Illustration of a small high-wing airplane flying over a runway under soft clouds">
+        <svg viewBox="0 0 340 190" width="340" height="190" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="heroSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#dce8f0"/>
+              <stop offset="1" stop-color="#a9c6d8"/>
+            </linearGradient>
+            <linearGradient id="heroGround" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f3ead3"/>
+              <stop offset="1" stop-color="#e6d7b8"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="170" cy="95" rx="160" ry="86" fill="url(#heroSky)" stroke="#5d4127" stroke-width="4"/>
+          <ellipse cx="170" cy="95" rx="148" ry="75" fill="none" stroke="#3f1f69" stroke-width="1.5" stroke-dasharray="4 5" opacity="0.55"/>
+          <circle cx="252" cy="52" r="20" fill="#faf5e9" opacity="0.95" stroke="#e6d7b8" stroke-width="2"/>
+          <g fill="#faf5e9" stroke="#8fa9bd" stroke-width="2" opacity="0.95">
+            <ellipse cx="90" cy="58" rx="34" ry="12"/>
+            <ellipse cx="114" cy="52" rx="24" ry="10"/>
+            <ellipse cx="228" cy="92" rx="28" ry="10"/>
+          </g>
+          <path d="M40 60 C 90 90, 150 100, 210 78" fill="none" stroke="#1b2a4a" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.7"/>
+          <g>
+            <path d="M170 58 L178 92 L226 102 L178 106 L175 128 L165 128 L162 106 L114 102 L162 92 Z" fill="#1b2a4a"/>
+            <path d="M162 92 L178 92 L176 100 L164 100 Z" fill="#c96a1b"/>
+            <circle cx="120" cy="66" r="4" fill="#c96a1b"/>
+          </g>
+          <g>
+            <rect x="62" y="138" width="216" height="26" rx="6" fill="url(#heroGround)" stroke="#5d4127" stroke-width="3"/>
+            <line x1="78" y1="151" x2="262" y2="151" stroke="#5d4127" stroke-width="3" stroke-dasharray="14 10"/>
+            <rect x="62" y="138" width="10" height="26" rx="3" fill="#3f1f69"/>
+            <rect x="268" y="138" width="10" height="26" rx="3" fill="#3f1f69"/>
+          </g>
+          <g>
+            <line x1="292" y1="120" x2="292" y2="148" stroke="#3e2c19" stroke-width="4"/>
+            <path d="M292 120 L314 126 L292 133 Z" fill="#c96a1b" stroke="#7d3f0d" stroke-width="2"/>
+          </g>
+        </svg>
+      </div>
       <h1 id="hero-title">All about flying and airplanes.</h1>
       <p class="hero-sub">A practical home base for Five College students to explore flight training, Flight Sim, aircraft, and aviation history.</p>
       <div class="hero-actions">
@@ -16,9 +53,9 @@
       </div>
       {{ with $hero }}
       {{ $h := .Fill "1200x630 center" }}
-      <figure class="hero-image-panel">
-        <img src="{{ $h.RelPermalink }}" alt="Illustrative view of a small high-wing airplane on an airport ramp at sunrise" width="1200" height="630" fetchpriority="high">
-        <figcaption>Illustrative image</figcaption>
+      <figure class="hero-photo polaroid">
+        <img src="{{ $h.RelPermalink }}" alt="Cessna 172 airplane just after takeoff over the runway" width="1200" height="630" fetchpriority="high">
+        <figcaption>Placeholder photo — swap with club shots anytime</figcaption>
       </figure>
       {{ end }}
     </div>
